@@ -1,6 +1,7 @@
 :root {
-  --aboutme-img-height: 400px;
+  --aboutme-img-height: 320px;
   --aboutme-img-width: 350px;
+  --aboutme-img-perc: 125%;
   --accent-main: blue;
   --font-main: "Quicksand";
   --header-font-size: 2rem;
@@ -33,36 +34,6 @@
     height: 300px;
   }
 } */
-
-@media screen and (max-width: 480px) {
-  :root {
-    --aboutme-img-height: 70vh;
-    --aboutme-img-width: 80vw;
-    --project-card-width: 80vw;
-    --project-card-height: 65vh;
-    --contact-img-width: 100vw;
-    --contact-img-height: 450px;
-  }
-
-  h1 {
-    text-align: center;
-  }
-
-  .about-me-container {
-    height: 100vh;
-    flex-direction: column;
-    align-items: center;
-  }
-  .about-me.wrapper {
-    background: none;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-  }
-  footer {
-    flex-direction: column;
-  }
-}
 
 @media screen and (max-width: 800px) {
   /* .about-me-container {
@@ -146,14 +117,31 @@ p {
 
 .about-me-container {
   display: flex;
-  align-items: center;
+  margin-top: 2rem;
 }
 
-.about-me-container > img {
+.about-me-img {
+  align-self: center;
+  display: flex;
   width: var(--aboutme-img-width);
   height: var(--aboutme-img-height);
-  object-position: center;
+  position: relative;
+}
+
+.about-me-img img {
+  width: 100%;
+  height: var(--aboutme-img-perc);
   object-fit: cover;
+  align-self: center;
+}
+
+.about-me-img p {
+  color: var(--white);
+  width: 100%;
+  position: absolute;
+  top: 90%;
+  text-align: center;
+  font-size: 2.8rem;
 }
 
 .wrapper {
@@ -167,6 +155,7 @@ p {
   flex: 1;
   height: 320px;
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 .my-work-container {
@@ -253,4 +242,38 @@ footer img {
   margin-left: auto;
   object-fit: cover;
   object-position: center;
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --aboutme-img-height: 70vh;
+    --aboutme-img-width: 80vw;
+    --aboutme-img-perc: 100%;
+    --project-card-width: 80vw;
+    --project-card-height: 65vh;
+    --contact-img-width: 100vw;
+    --contact-img-height: 450px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .about-me-container.wrapper {
+    height: min-content;
+    flex-direction: column;
+    background: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+
+  .about-me-img p {
+    top: 85%;
+    font-size: 2rem;
+  }
+
+  footer {
+    flex-direction: column;
+  }
 }
