@@ -35,33 +35,8 @@
   }
 } */
 
-@media screen and (max-width: 800px) {
-  /* .about-me-container {
-    display: grid;
-    grid-template-rows: 2fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "picture about" "about about";
-    background-color: pink;
-  }
-
-  .about-me-container > img {
-    grid-area: picture;
-  }
-
-  .wrapper.about-me {
-    grid-area: about;
-  } */
-
-  .about-me-container {
-    display: block;
-  }
-
-  .about-me-container > img {
-    display: inline-block;
-  }
-}
-
 body {
+  max-width: 100vw;
   display: grid;
   grid-template-rows: 1fr min-content;
   grid-template-areas: "main" "contact";
@@ -88,7 +63,7 @@ body {
 
 main {
   grid-area: main;
-  margin: 2vw;
+  padding: 2vw;
 }
 
 footer {
@@ -251,7 +226,7 @@ footer img {
     --aboutme-img-perc: 100%;
     --project-card-width: 80vw;
     --project-card-height: 65vh;
-    --contact-img-width: 100vw;
+    /* --contact-img-width: 100vw; */
     --contact-img-height: 450px;
   }
 
@@ -271,6 +246,11 @@ footer img {
   .about-me-img p {
     top: 85%;
     font-size: 2rem;
+  }
+
+  footer img {
+    width: 100%;
+    margin-left: 0;
   }
 
   footer {
