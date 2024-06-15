@@ -11,10 +11,12 @@
   --project-header-bold: 600;
   --black: black;
   --white: white;
-  --project-card-height: 300px;
-  --project-card-width: 250px;
+  --project-card-height: 400px;
+  --project-card-width: 350px;
   --contact-img-width: 400px;
   --contact-img-height: 350px;
+  --github-svg: url(https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg);
+  --external-link-svg: url(../assets/external-link.svg);
 }
 
 /* @media screen and (max-width: 1000px) {
@@ -31,36 +33,6 @@
     height: 300px;
   }
 } */
-
-@media screen and (max-width: 768px) {
-  :root {
-    --aboutme-img-height: 70vh;
-    --aboutme-img-width: 80vw;
-    --project-card-width: 80vw;
-    --project-card-height: 65vh;
-    --contact-img-width: 100vw;
-    --contact-img-height: 450px;
-  }
-
-  h1 {
-    text-align: center;
-  }
-
-  .about-me-container {
-    height: 100vh;
-    flex-direction: column;
-  }
-  .about-me.wrapper {
-    background: none;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-  }
-  footer {
-    flex-direction: column;
-    background-color: black;
-  }
-}
 
 body {
   display: grid;
@@ -168,7 +140,7 @@ p {
 
 .project-card > img {
   width: inherit;
-  height: 70%;
+  height: 65%;
 }
 
 .project-content-container {
@@ -188,6 +160,9 @@ p {
 .project-content .icon {
   height: 1.5rem;
   width: 1.5rem;
+  color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .project-content h2 {
@@ -196,10 +171,13 @@ p {
 
 .project-content .github {
   grid-area: github;
+  background: var(--github-svg) no-repeat;
 }
 
 .project-content .share {
   grid-area: share;
+  background: var(--external-link-svg) no-repeat;
+  background-size: contain;
 }
 
 .project-content p {
@@ -219,4 +197,60 @@ footer img {
   margin-left: auto;
   object-fit: cover;
   object-position: center;
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --aboutme-img-height: 70vh;
+    --aboutme-img-width: 80vw;
+    --project-card-width: 80vw;
+    --project-card-height: 65vh;
+    --contact-img-width: 100vw;
+    --contact-img-height: 450px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .about-me-container {
+    height: 100vh;
+    flex-direction: column;
+  }
+  .about-me.wrapper {
+    background: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+  footer {
+    flex-direction: column;
+    background-color: black;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  /* .about-me-container {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "picture about" "about about";
+    background-color: pink;
+  }
+
+  .about-me-container > img {
+    grid-area: picture;
+  }
+
+  .wrapper.about-me {
+    grid-area: about;
+  } */
+
+  .about-me-container {
+    display: block;
+  }
+
+  .about-me-container > img {
+    display: inline-block;
+  }
 }
