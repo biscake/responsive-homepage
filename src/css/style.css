@@ -34,6 +34,62 @@
   }
 } */
 
+@media screen and (max-width: 480px) {
+  :root {
+    --aboutme-img-height: 70vh;
+    --aboutme-img-width: 80vw;
+    --project-card-width: 80vw;
+    --project-card-height: 65vh;
+    --contact-img-width: 100vw;
+    --contact-img-height: 450px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .about-me-container {
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-me.wrapper {
+    background: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+  footer {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  /* .about-me-container {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "picture about" "about about";
+    background-color: pink;
+  }
+
+  .about-me-container > img {
+    grid-area: picture;
+  }
+
+  .wrapper.about-me {
+    grid-area: about;
+  } */
+
+  .about-me-container {
+    display: block;
+  }
+
+  .about-me-container > img {
+    display: inline-block;
+  }
+}
+
 body {
   display: grid;
   grid-template-rows: 1fr min-content;
@@ -197,60 +253,4 @@ footer img {
   margin-left: auto;
   object-fit: cover;
   object-position: center;
-}
-
-@media screen and (max-width: 480px) {
-  :root {
-    --aboutme-img-height: 70vh;
-    --aboutme-img-width: 80vw;
-    --project-card-width: 80vw;
-    --project-card-height: 65vh;
-    --contact-img-width: 100vw;
-    --contact-img-height: 450px;
-  }
-
-  h1 {
-    text-align: center;
-  }
-
-  .about-me-container {
-    height: 100vh;
-    flex-direction: column;
-  }
-  .about-me.wrapper {
-    background: none;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-  }
-  footer {
-    flex-direction: column;
-    background-color: black;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  /* .about-me-container {
-    display: grid;
-    grid-template-rows: 2fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "picture about" "about about";
-    background-color: pink;
-  }
-
-  .about-me-container > img {
-    grid-area: picture;
-  }
-
-  .wrapper.about-me {
-    grid-area: about;
-  } */
-
-  .about-me-container {
-    display: block;
-  }
-
-  .about-me-container > img {
-    display: inline-block;
-  }
 }
