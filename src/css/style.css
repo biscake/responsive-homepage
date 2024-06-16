@@ -20,21 +20,6 @@
   --external-link-svg: url(../assets/external-link.svg);
 }
 
-/* @media screen and (max-width: 1000px) {
-  :root {
-    --aboutme-img-height: 300px;
-    --aboutme-img-width: 250px;
-  }
-  .about-me-container {
-    flex-direction: column;
-  }
-
-  .about-me-container > img {
-    width: 250px;
-    height: 300px;
-  }
-} */
-
 body {
   max-width: 100vw;
   display: grid;
@@ -91,16 +76,19 @@ p {
 }
 
 .about-me-container {
-  display: flex;
+  height: 320px;
   margin-top: 2rem;
+  /* padding: 1.5rem; */
 }
 
 .about-me-img {
-  align-self: center;
   display: flex;
   width: var(--aboutme-img-width);
   height: var(--aboutme-img-height);
   position: relative;
+  float: left;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
 }
 
 .about-me-img img {
@@ -119,18 +107,20 @@ p {
   font-size: 2.8rem;
 }
 
+.about-me-container h1 {
+  padding-top: 1.5rem;
+}
+
+.about-me-container p,
+.about-me-container h1 {
+  padding-right: 2rem;
+}
+
 .wrapper {
   background-color: white;
   box-shadow: 10px 10px 17px -6px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 10px 17px -6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 17px -6px rgba(0, 0, 0, 0.75);
-}
-
-.about-me {
-  flex: 1;
-  height: 320px;
-  padding: 1rem;
-  box-sizing: border-box;
 }
 
 .my-work-container {
@@ -226,7 +216,6 @@ footer img {
     --aboutme-img-perc: 100%;
     --project-card-width: 80vw;
     --project-card-height: 65vh;
-    /* --contact-img-width: 100vw; */
     --contact-img-height: 450px;
   }
 
@@ -235,12 +224,19 @@ footer img {
   }
 
   .about-me-container.wrapper {
+    display: flex;
+    align-items: center;
     height: min-content;
     flex-direction: column;
     background: none;
     box-shadow: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
+  }
+
+  .about-me-img {
+    float: none;
+    margin: 0;
   }
 
   .about-me-img p {
@@ -255,5 +251,50 @@ footer img {
 
   footer {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 480px) {
+  :root {
+    --project-card-width: 38vw;
+  }
+
+  main {
+    padding: 8vw;
+  }
+
+  .about-me-container {
+    height: 550px;
+  }
+
+  .about-me-container * {
+    position: relative;
+    left: -2vw;
+    top: -1vh;
+  }
+  .about-me-img {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    margin-right: 0;
+  }
+
+  .about-me-img p {
+    width: max-content;
+    font-size: 3.2rem;
+    top: -65px;
+    left: 75%;
+  }
+
+  .about-me-container h1,
+  .about-me-container p {
+    padding-left: 3.5vw;
+    padding-right: 0;
+  }
+
+  .about-me-container h1 {
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 6rem;
+    padding-left: 3.5vw;
   }
 }
